@@ -1,0 +1,228 @@
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPESIAL 17 AGUSTUS - PINTARBOLA</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    }
+
+    body{
+    background:url('slot-bg.jpg') center center/cover no-repeat fixed;
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    }
+
+    body::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,rgba(0,90,255,.75),rgba(255,128,0,.75));
+    backdrop-filter:blur(2px);
+    }
+
+    .card{
+    position:relative;
+    width:420px;
+    max-width:92%;
+    background:rgba(255,255,255,.08);
+    border:2px solid rgba(255,255,255,.15);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 30px rgba(255,165,0,.6);
+    animation:zoom .6s ease;
+    z-index:2;
+    }
+
+    @keyframes zoom{
+    from{opacity:0;transform:scale(.8);}
+    to{opacity:1;transform:scale(1);}
+    }
+
+    .logo{
+    width:300px;
+    margin-bottom:0px;
+    }
+
+    .model{
+    width:200px;
+    border-radius:15px;
+    margin:15px auto;
+    box-shadow:0 0 25px rgba(255,255,255,.4);
+    display:block;
+    }
+
+    h1{
+    font-size:30px;
+    font-weight:800;
+    color:#FFD700;
+    text-shadow:0 0 10px #000;
+    }
+
+    h2{
+    font-size:18px;
+    color:#fff;
+    margin-bottom:15px;
+    }
+
+    input{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    }
+
+    button{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#ff8a00,#ffd000);
+    cursor:pointer;
+    transition:.3s;
+    }
+
+    button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px orange;
+    }
+
+    #hasil{
+    display:none;
+    }
+
+    .success{
+    font-size:32px;
+    font-weight:800;
+    color:#00ff99;
+    text-shadow:0 0 15px #000;
+    margin-bottom:15px;
+    }
+
+    .bonus{
+    font-family:'Orbitron',sans-serif;
+    font-size:42px;
+    color:#FFD700;
+    text-shadow:0 0 15px orange;
+    margin:15px 0;
+    animation:blink 1s infinite;
+    }
+
+    @keyframes blink{
+    50%{opacity:.5;}
+    }
+
+    .note{
+    margin-top:20px;
+    background:rgba(255,255,255,.12);
+    padding:15px;
+    border-radius:10px;
+    color:#fff;
+    font-size:15px;
+    }
+
+    .small{
+    color:#fff;
+    font-size:18px;
+    line-height:1.5;
+    }
+    </style>
+
+    </head>
+
+    <body>
+
+    <div class="card" id="    background:url("background1.jpg") center center/cover no-repeat fixed;
+    ">
+
+    <img src="https://i.ibb.co/rKmfBhvj/image-removebg-preview-2026-08-02-T040838-115.png" class="logo">
+
+    <h1>SPESIAL 17 AGUSTUS</h1>
+
+    <h2>AMBIL SALDO KAMU DENGAN DAFTAR</h2>
+
+
+    <input type="text" id="username" placeholder="> USERNAME <">
+
+    <input type="text" id="kode" placeholder="> KODE AGUSTUS <">
+
+    <button onclick="claimBonus()">
+    🎁 AMBIL BONUS SEKARANG
+    </button>
+
+    </div>
+
+    <div class="card" id="hasil">
+
+
+
+    <div class="success">
+    🎉 SELAMAT 🎉
+    </div>
+
+    <div class="small">
+    ID :
+    <b id="namaUser"></b>
+    </div>
+
+    <div class="small" style="margin-top:15px;">
+    MENDAPATKAN BONUS SEBESAR
+    </div>
+
+    <div class="bonus">
+    50.000 IDR
+    </div>
+
+    <div class="note">
+    📸 Jangan lupa screenshot halaman ini lalu kirim ke Admin agar bonus dapat diproses sesuai ketentuan yang berlaku.
+    </div>
+
+    <button onclick="location.reload()">
+    KEMBALI
+    </button>
+
+    </div>
+
+    <script>
+
+    function claimBonus(){
+
+    let user=document.getElementById("username").value.trim();
+    let kode=document.getElementById("kode").value.trim();
+
+    if(user==""||kode==""){
+    alert("Silakan isi Username dan Kode Agustus.");
+    return;
+    }
+
+    document.getElementById("namaUser").innerHTML=user;
+
+    document.getElementById("formPage").style.display="none";
+    document.getElementById("hasil").style.display="block";
+
+    }
+
+    </script>
+
+    </body>
+    </html>
